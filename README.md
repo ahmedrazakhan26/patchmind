@@ -32,6 +32,12 @@ To see a compact summary of the change counts, use the `--summary` flag:
 python -m cli.main --summary
 ```
 
+To inspect who last modified each line of a file, pass the `--blame` flag:
+
+```bash
+python -m cli.main --blame path/to/file.py
+```
+
 ## PatchEngine
 
 `PatchEngine` powers the change detection in PatchMind. It scans a Git project and categorizes file additions, modifications, and deletions. The results are returned as a simple dataclass:

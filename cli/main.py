@@ -8,6 +8,7 @@ from core.patch_engine import PatchEngine
 from core.summarizer import PatchSummarizer
 from core.visualizer import PatchVisualizer
 from core.history import PatchHistory
+from core.blamer import PatchBlamer
 
 
 def main() -> None:
@@ -39,6 +40,11 @@ def main() -> None:
         metavar="FILE",
         help="Display history timeline for the given file",
     )
+    parser.add_argument(
+        "--blame",
+        metavar="FILE",
+        help="Show blame information for the given file",
+    )
     args = parser.parse_args()
 
     if args.history:
@@ -52,6 +58,19 @@ def main() -> None:
         for i, event in enumerate(timeline):
             connector = "\u2514\u2500" if i == len(timeline) - 1 else "\u251c\u2500"
             print(f"{connector} [{event['date']}] [{event['author']}] {event['summary']}")
+        return
+
+    if args.blame:
+        try:
+            blame = PatchBlamer.blame(args.blame)
+        except RuntimeError as exc:
+            print(f"Error: {exc}")
+            return
+
+        for entry in blame:
+            line_no = str(entry["line_number"]).rjust(4)
+            commit = entry["commit_hash"][:8]
+            print(f"{line_no} {commit} {entry['author']} | {entry['code_line']}")
         return
 
     if args.changes or args.summary or args.analyze or args.tree:
