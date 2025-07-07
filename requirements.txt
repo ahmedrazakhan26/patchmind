@@ -1,8 +1,10 @@
 # Core
 GitPython~=3.1
 PyYAML~=6.0
+Jinja2
+pytest
+rich
 
 # Optional (uncomment as needed)
-# rich        # for rich CLI output
 # typer       # for CLI command parser
 # watchdog    # for file system monitoring
