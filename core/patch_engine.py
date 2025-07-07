@@ -5,7 +5,9 @@ from __future__ import annotations
 import subprocess
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import List
+from typing import List, Dict
+
+from .analysis import PatchAnalyzer
 
 
 @dataclass
@@ -83,3 +85,12 @@ class PatchEngine:
                 modified.append(file_path)
 
         return PatchResult(added=added, modified=modified, deleted=deleted)
+
+    def analyze_changes(self, repo_path: str | Path = ".") -> Dict[str, dict]:
+        """Analyze each modified file and return a mapping of insights."""
+
+        changes = self.detect_changes(repo_path)
+        analysis: Dict[str, dict] = {}
+        for file_path in changes.modified:
+            analysis[file_path] = PatchAnalyzer.analyze_file_diff(file_path)
+        return analysis
