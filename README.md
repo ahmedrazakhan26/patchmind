@@ -38,6 +38,17 @@ To inspect who last modified each line of a file, pass the `--blame` flag:
 python -m cli.main --blame path/to/file.py
 ```
 
+To gauge the potential impact of modifying a file, use the `--insight` flag:
+
+```bash
+python -m cli.main --insight path/to/file.py
+```
+
+This command prints an impact score between 0 and 100. Scores below 30 are
+considered **low** risk, scores from 30–69 indicate **medium** risk, and anything
+70 or above is **high** risk. The score factors in unique authors, commit
+history, file length, and how many functions have changed.
+
 ## PatchEngine
 
 `PatchEngine` powers the change detection in PatchMind. It scans a Git project and categorizes file additions, modifications, and deletions. The results are returned as a simple dataclass:

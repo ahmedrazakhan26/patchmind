@@ -9,6 +9,7 @@ from core.summarizer import PatchSummarizer
 from core.visualizer import PatchVisualizer
 from core.history import PatchHistory
 from core.blamer import PatchBlamer
+from core.insight import PatchInsight
 
 
 def main() -> None:
@@ -45,6 +46,11 @@ def main() -> None:
         metavar="FILE",
         help="Show blame information for the given file",
     )
+    parser.add_argument(
+        "--insight",
+        metavar="FILE",
+        help="Show risk insight score for the given file",
+    )
     args = parser.parse_args()
 
     if args.history:
@@ -71,6 +77,11 @@ def main() -> None:
             line_no = str(entry["line_number"]).rjust(4)
             commit = entry["commit_hash"][:8]
             print(f"{line_no} {commit} {entry['author']} | {entry['code_line']}")
+        return
+
+    if args.insight:
+        result = PatchInsight.file_score(args.insight)
+        print(f"Impact score: {result['score']} ({result['risk']})")
         return
 
     if args.changes or args.summary or args.analyze or args.tree:
