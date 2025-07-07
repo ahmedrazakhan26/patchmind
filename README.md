@@ -1,6 +1,7 @@
-![CI](https://github.com/Darkstar420/patchmind/actions/workflows/patchmind.yml/badge.svg)
-[![PyPI version](https://badge.fury.io/py/patchmind.svg)](https://badge.fury.io/py/patchmind)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+![Run PatchMind Report](https://github.com/Darkstar420/patchmind/actions/workflows/patchmind.yml/badge.svg)
+[![PyPI](https://img.shields.io/pypi/v/patchmind.svg)](https://pypi.org/project/patchmind/)
+![License](https://img.shields.io/github/license/Darkstar420/patchmind)
+
 
 
 # 🧠 PatchMind
