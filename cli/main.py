@@ -6,6 +6,7 @@ import argparse
 
 from core.patch_engine import PatchEngine
 from core.summarizer import PatchSummarizer
+from core.visualizer import PatchVisualizer
 
 
 def main() -> None:
@@ -27,9 +28,14 @@ def main() -> None:
         action="store_true",
         help="Print intelligent analysis of modified files",
     )
+    parser.add_argument(
+        "--tree",
+        action="store_true",
+        help="Display repository changes in a tree view",
+    )
     args = parser.parse_args()
 
-    if args.changes or args.summary or args.analyze:
+    if args.changes or args.summary or args.analyze or args.tree:
         engine = PatchEngine()
         try:
             result = engine.detect_changes()
@@ -53,6 +59,10 @@ def main() -> None:
         if args.summary:
             summary = PatchSummarizer.summarize(result)
             print(summary)
+
+        if args.tree:
+            tree = PatchVisualizer.tree_summary(result)
+            print(tree)
 
         if args.analyze:
             analysis = engine.analyze_changes()
