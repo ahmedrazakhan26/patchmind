@@ -1,11 +1,13 @@
 # 🧠 PatchMind
 
 [![Run PatchMind Report](https://github.com/Darkstar420/patchmind/actions/workflows/patchmind.yml/badge.svg?branch=main)](https://github.com/Darkstar420/patchmind/actions/workflows/patchmind.yml)
-[![PyPI Publish](https://github.com/Darkstar420/patchmind/actions/workflows/publish.yml/badge.svg?branch=main)](https://github.com/Darkstar420/patchmind/actions/workflows/publish.yml)
+[![Publish to PyPI](https://github.com/Darkstar420/patchmind/actions/workflows/publish.yml/badge.svg?branch=main)](https://github.com/Darkstar420/patchmind/actions/workflows/publish.yml)
 [![PyPI](https://img.shields.io/pypi/v/patchmind)](https://pypi.org/project/patchmind/)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 
-**PatchMind** is a modular Python-based framework that monitors a local Git repository and generates intelligent HTML reports with change summaries, tree views, file timelines, risk scoring, and more. Designed for developers who want lightweight tools to keep their codebase clean and up to date — without another bloated assistant.
+**PatchMind** is a modular Python-based framework that monitors a local Git repository and generates intelligent HTML reports with patch-level diffs, tree views, file history timelines, risk scoring, and more. 
+
+Designed for developers who want **lightweight tools** to keep their codebase clean and up to date — without another bloated assistant.
 
 ---
 
@@ -14,7 +16,7 @@
 - 🔍 Patch-level file change detection
 - 🌳 Tree-based visualization of modified files
 - 📅 File history timeline with author and commit metadata
-- ⚠️ Impact score and risk analysis
+- ⚠️ File impact score and risk analysis
 - 👤 Line-level blame summary
 - 🧾 One-click HTML report generation via CLI
 
@@ -26,23 +28,39 @@
 
 ---
 
-## ⚙️ Installation
+## 📦 Installation
+
+Install directly from PyPI:
 
 ```bash
-git clone https://github.com/your-user/patchmind.git
+pip install patchmind
+````
+
+Or clone and install manually:
+
+```bash
+git clone https://github.com/Darkstar420/patchmind.git
 cd patchmind
 pip install -r requirements.txt
-🛠️ Usage
-bash
-Copy
-Edit
-python cli/main.py --report
-This command will analyze your Git repo and generate a standalone HTML report as patchmind_report.html.
+```
 
-🧱 Project Structure
-arduino
-Copy
-Edit
+---
+
+## 🧪 Usage
+
+Run the tool from the project directory:
+
+```bash
+python cli/main.py --report
+```
+
+This command will analyze the Git repository and generate a standalone HTML report: `patchmind_report.html`.
+
+---
+
+## 🧱 Project Structure
+
+```
 patchmind/
 ├── cli/
 │   └── main.py
@@ -59,17 +77,31 @@ patchmind/
 ├── config.yaml
 ├── requirements.txt
 └── README.md
-🧪 Testing
-bash
-Copy
-Edit
+```
+
+---
+
+## ✅ Why PatchMind?
+
+* Zero-setup, fast local analysis
+* Fully offline, no cloud required
+* Clear visualizations of code evolution
+* Designed for speed, not ceremony
+
+---
+
+## 🧪 Testing
+
+To run unit tests:
+
+```bash
 pytest -q
-Unit tests are located in tests/test_reporter.py and validate HTML report generation using mocks.
+```
 
-📌 Why PatchMind?
-✅ Zero-setup, fast HTML output
-✅ Clear, visual insight into how your repo evolves
-✅ Built by devs, for devs — no cloud syncing, no bloat
+Tests are located in `tests/test_reporter.py` and validate report generation using mocks.
 
-📄 License
+---
+
+## 📄 License
+
 Apache 2.0 — free to use, modify, and build on.
