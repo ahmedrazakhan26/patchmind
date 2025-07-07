@@ -49,6 +49,15 @@ considered **low** risk, scores from 30–69 indicate **medium** risk, and anyth
 70 or above is **high** risk. The score factors in unique authors, commit
 history, file length, and how many functions have changed.
 
+To generate a full HTML report of recent repository changes, use the `--report` flag:
+
+```bash
+python -m cli.main --report
+```
+
+This writes `report.html` in the current directory containing summaries, tree views,
+risk scores, history timelines, and blame data.
+
 ## PatchEngine
 
 `PatchEngine` powers the change detection in PatchMind. It scans a Git project and categorizes file additions, modifications, and deletions. The results are returned as a simple dataclass:

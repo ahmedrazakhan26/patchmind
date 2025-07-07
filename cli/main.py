@@ -10,6 +10,7 @@ from core.visualizer import PatchVisualizer
 from core.history import PatchHistory
 from core.blamer import PatchBlamer
 from core.insight import PatchInsight
+from core.reporter import PatchReporter
 
 
 def main() -> None:
@@ -51,6 +52,11 @@ def main() -> None:
         metavar="FILE",
         help="Show risk insight score for the given file",
     )
+    parser.add_argument(
+        "--report",
+        action="store_true",
+        help="Generate an HTML report of repository changes",
+    )
     args = parser.parse_args()
 
     if args.history:
@@ -82,6 +88,11 @@ def main() -> None:
     if args.insight:
         result = PatchInsight.file_score(args.insight)
         print(f"Impact score: {result['score']} ({result['risk']})")
+        return
+
+    if args.report:
+        PatchReporter.generate_report("report.html")
+        print("Report written to report.html")
         return
 
     if args.changes or args.summary or args.analyze or args.tree:
