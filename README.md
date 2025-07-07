@@ -1,6 +1,6 @@
-![Run PatchMind Report](https://github.com/Darkstar420/patchmind/actions/workflows/patchmind.yml/badge.svg?branch=main)
+[![Run PatchMind Report](https://github.com/Darkstar420/patchmind/actions/workflows/patchmind.yml/badge.svg?branch=main)](https://github.com/Darkstar420/patchmind/actions/workflows/patchmind.yml)
 [![PyPI](https://img.shields.io/pypi/v/patchmind)](https://pypi.org/project/patchmind/)
-![License](https://img.shields.io/github/license/Darkstar420/patchmind)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 
 
 
