@@ -1,3 +1,8 @@
+![CI](https://github.com/Darkstar420/patchmind/actions/workflows/patchmind.yml/badge.svg)
+[![PyPI version](https://badge.fury.io/py/patchmind.svg)](https://badge.fury.io/py/patchmind)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+
 # 🧠 PatchMind
 
 **PatchMind** is a modular Python-based framework that monitors a local Git repository and generates intelligent HTML reports with change summaries, tree views, file timelines, risk scoring, and more. Designed for developers who want lightweight tools to keep their codebase clean and up to date — without another bloated assistant.
