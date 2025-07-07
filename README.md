@@ -5,7 +5,6 @@
 # 🧠 PatchMind
 
 [![Run PatchMind Report](https://github.com/Darkstar420/patchmind/actions/workflows/patchmind.yml/badge.svg?branch=main)](https://github.com/Darkstar420/patchmind/actions/workflows/patchmind.yml)
-[![Publish to PyPI](https://github.com/Darkstar420/patchmind/actions/workflows/publish.yml/badge.svg?branch=main)](https://github.com/Darkstar420/patchmind/actions/workflows/publish.yml)
 [![PyPI - Version](https://img.shields.io/pypi/v/patchmind?color=blue)](https://pypi.org/project/patchmind/)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 [![GitHub stars](https://img.shields.io/github/stars/Darkstar420/patchmind?style=social)](https://github.com/Darkstar420/patchmind/stargazers)
