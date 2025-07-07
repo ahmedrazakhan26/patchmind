@@ -21,10 +21,22 @@ Keeping track of every small change in a project can be tedious. PatchMind exist
 PatchMind ships with a command-line interface. After installing the dependencies, run:
 
 ```bash
-python -m cli.main
+python -m cli.main --changes
 ```
 
-This will execute the `main()` function in `cli/main.py` and provide access to future commands.
+This prints a summary of added, modified, and deleted files in the current repository. Without `--changes` the CLI currently performs no action.
+
+## PatchEngine
+
+`PatchEngine` powers the change detection in PatchMind. It scans a Git project and categorizes file additions, modifications, and deletions. The results are returned as a simple dataclass:
+
+```python
+from core.patch_engine import PatchEngine
+
+engine = PatchEngine()
+changes = engine.detect_changes()
+print(changes.added)
+```
 
 ## Contributing
 
