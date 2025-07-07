@@ -1,75 +1,70 @@
-# PatchMind
+# 🧠 PatchMind
 
-PatchMind is a modular Python-based framework that monitors a local Git repository for changes and suggests automated patches. It is designed for developers who want lightweight tooling to keep their codebase clean and up to date.
+**PatchMind** is a modular Python-based framework that monitors a local Git repository and generates intelligent HTML reports with change summaries, tree views, file timelines, risk scoring, and more. Designed for developers who want lightweight tools to keep their codebase clean and up to date — without another bloated assistant.
 
-## Why PatchMind?
+---
 
-Keeping track of every small change in a project can be tedious. PatchMind exists to analyze repository updates, evaluate their significance, and propose patch suggestions automatically. This helps maintainers stay focused on what matters while benefiting from quick feedback about potential improvements.
+## 🚀 Features
 
-## How It Works
+- 🔍 Patch-level file change detection
+- 🌳 Tree-based visualization of modified files
+- 📅 File history timeline with author and commit metadata
+- ⚠️ Impact score and risk analysis
+- 👤 Line-level blame summary
+- 🧾 One-click HTML report generation via CLI
 
-1. **Monitor**: Watch a local Git repository for file additions, deletions, and modifications.
-2. **Evaluate**: Determine the impact of these changes and identify areas that could use patches.
-3. **Suggest**: Provide patch suggestions through a simple command-line interface.
+---
 
-```
-[Repository] -> [PatchEngine] -> [Patch Suggestions]
-```
+## 📸 Sample Output
 
-## Running the CLI
+![PatchMind HTML Report Sample](docs/patchmind_report_sample.png)
 
-PatchMind ships with a command-line interface. After installing the dependencies, run:
+---
 
-```bash
-python -m cli.main --changes
-```
-
-This prints a summary of added, modified, and deleted files in the current repository. Without `--changes` the CLI currently performs no action.
-
-To see a compact summary of the change counts, use the `--summary` flag:
+## ⚙️ Installation
 
 ```bash
-python -m cli.main --summary
-```
+git clone https://github.com/your-user/patchmind.git
+cd patchmind
+pip install -r requirements.txt
+🛠️ Usage
+bash
+Copy
+Edit
+python cli/main.py --report
+This command will analyze your Git repo and generate a standalone HTML report as patchmind_report.html.
 
-To inspect who last modified each line of a file, pass the `--blame` flag:
+🧱 Project Structure
+arduino
+Copy
+Edit
+patchmind/
+├── cli/
+│   └── main.py
+├── core/
+│   ├── engine.py
+│   ├── reporter.py
+│   ├── summarizer.py
+│   ├── insight.py
+│   └── visualizer.py
+├── tests/
+│   └── test_reporter.py
+├── docs/
+│   └── patchmind_report_sample.png
+├── config.yaml
+├── requirements.txt
+└── README.md
+🧪 Testing
+bash
+Copy
+Edit
+pytest -q
+Unit tests are located in tests/test_reporter.py and validate HTML report generation using mocks.
 
-```bash
-python -m cli.main --blame path/to/file.py
-```
+📌 Why PatchMind?
+✅ Zero-setup, fast HTML output
+✅ Clear, visual insight into how your repo evolves
+✅ Built by devs, for devs — no cloud syncing, no bloat
 
-To gauge the potential impact of modifying a file, use the `--insight` flag:
-
-```bash
-python -m cli.main --insight path/to/file.py
-```
-
-This command prints an impact score between 0 and 100. Scores below 30 are
-considered **low** risk, scores from 30–69 indicate **medium** risk, and anything
-70 or above is **high** risk. The score factors in unique authors, commit
-history, file length, and how many functions have changed.
-
-To generate a full HTML report of recent repository changes, use the `--report` flag:
-
-```bash
-python -m cli.main --report
-```
-
-This writes `report.html` in the current directory containing summaries, tree views,
-risk scores, history timelines, and blame data.
-
-## PatchEngine
-
-`PatchEngine` powers the change detection in PatchMind. It scans a Git project and categorizes file additions, modifications, and deletions. The results are returned as a simple dataclass:
-
-```python
-from core.patch_engine import PatchEngine
-
-engine = PatchEngine()
-changes = engine.detect_changes()
-print(changes.added)
-```
-
-## Contributing
-
-Contributions are welcome! Fork the repository, create a feature branch, and open a pull request with your changes. Please ensure any new functionality includes appropriate tests.
+📄 License
+Apache 2.0 — free to use, modify, and build on.
