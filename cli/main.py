@@ -22,9 +22,14 @@ def main() -> None:
         action="store_true",
         help="Print a short summary of repository changes",
     )
+    parser.add_argument(
+        "--analyze",
+        action="store_true",
+        help="Print intelligent analysis of modified files",
+    )
     args = parser.parse_args()
 
-    if args.changes or args.summary:
+    if args.changes or args.summary or args.analyze:
         engine = PatchEngine()
         try:
             result = engine.detect_changes()
@@ -48,6 +53,11 @@ def main() -> None:
         if args.summary:
             summary = PatchSummarizer.summarize(result)
             print(summary)
+
+        if args.analyze:
+            analysis = engine.analyze_changes()
+            for path, info in analysis.items():
+                print(f"{path}: {info['summary']}")
 
 
 if __name__ == "__main__":
