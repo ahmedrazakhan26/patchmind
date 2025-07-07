@@ -19,7 +19,7 @@ setup(
             'patchmind=cli.main:main',
         ],
     },
-    author='Your Name or DOA',
+    author='DOA',
     description='AI-powered Git patch assistant with HTML report generation.',
     long_description=long_description,
     long_description_content_type='text/markdown',
