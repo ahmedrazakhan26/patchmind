@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="docs/patchmind.png" alt="PatchMind Banner" style="max-width:100%;">
+  <img src="https://raw.githubusercontent.com/Darkstar420/patchmind/main/docs/patchmind.png" alt="PatchMind Banner">
 </p>
 
 # 🧠 PatchMind
 
 [![Run PatchMind Report](https://github.com/Darkstar420/patchmind/actions/workflows/patchmind.yml/badge.svg?branch=main)](https://github.com/Darkstar420/patchmind/actions/workflows/patchmind.yml)
 [![Publish to PyPI](https://github.com/Darkstar420/patchmind/actions/workflows/publish.yml/badge.svg?branch=main)](https://github.com/Darkstar420/patchmind/actions/workflows/publish.yml)
-[![PyPI](https://img.shields.io/pypi/v/patchmind)](https://pypi.org/project/patchmind/)
+[![PyPI - Version](https://img.shields.io/pypi/v/patchmind?color=blue)](https://pypi.org/project/patchmind/)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 [![GitHub stars](https://img.shields.io/github/stars/Darkstar420/patchmind?style=social)](https://github.com/Darkstar420/patchmind/stargazers)
 
@@ -21,19 +21,19 @@ No cloud. No bloat. Just clean insight.
 
 ## 🚀 Key Features
 
-- 🔍 Detects file-level and line-level changes across commits
-- 🌳 Tree-based visualization of modified paths
-- 📅 File timeline view with authorship and metadata
-- ⚠️ Risk and impact scoring per file
-- 👤 Inline blame summaries
-- 📄 Clean, standalone HTML output
+- 🔍 Detects file-level and line-level changes across commits  
+- 🌳 Tree-based visualization of modified paths  
+- 📅 File timeline view with authorship and metadata  
+- ⚠️ Risk and impact scoring per file  
+- 👤 Inline blame summaries  
+- 📄 Clean, standalone HTML output  
 - ⚙️ Fully CLI-driven — automate in CI/CD
 
 ---
 
 ## 📸 Sample Output
 
-![PatchMind HTML Report Sample](docs/patchmind_report_sample.png)
+![PatchMind HTML Report Sample](https://raw.githubusercontent.com/Darkstar420/patchmind/main/docs/patchmind_report_sample.png)
 
 ---
 
@@ -104,3 +104,6 @@ Unit tests live in `tests/` and validate key functionality, including mock Git d
 ## 📄 License
 
 Licensed under the [Apache 2.0 License](https://opensource.org/licenses/Apache-2.0) — free to use, modify, and distribute.
+
+```
+
