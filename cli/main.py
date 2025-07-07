@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 
 from core.patch_engine import PatchEngine
+from core.summarizer import PatchSummarizer
 
 
 def main() -> None:
@@ -16,9 +17,14 @@ def main() -> None:
         action="store_true",
         help="Display a summary of repository changes",
     )
+    parser.add_argument(
+        "--summary",
+        action="store_true",
+        help="Print a short summary of repository changes",
+    )
     args = parser.parse_args()
 
-    if args.changes:
+    if args.changes or args.summary:
         engine = PatchEngine()
         try:
             result = engine.detect_changes()
@@ -26,17 +32,22 @@ def main() -> None:
             print(f"Error: {exc}")
             return
 
-        print("Added:")
-        for p in result.added:
-            print(f"  {p}")
+        if args.changes:
+            print("Added:")
+            for p in result.added:
+                print(f"  {p}")
 
-        print("Modified:")
-        for p in result.modified:
-            print(f"  {p}")
+            print("Modified:")
+            for p in result.modified:
+                print(f"  {p}")
 
-        print("Deleted:")
-        for p in result.deleted:
-            print(f"  {p}")
+            print("Deleted:")
+            for p in result.deleted:
+                print(f"  {p}")
+
+        if args.summary:
+            summary = PatchSummarizer.summarize(result)
+            print(summary)
 
 
 if __name__ == "__main__":

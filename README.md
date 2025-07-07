@@ -26,6 +26,12 @@ python -m cli.main --changes
 
 This prints a summary of added, modified, and deleted files in the current repository. Without `--changes` the CLI currently performs no action.
 
+To see a compact summary of the change counts, use the `--summary` flag:
+
+```bash
+python -m cli.main --summary
+```
+
 ## PatchEngine
 
 `PatchEngine` powers the change detection in PatchMind. It scans a Git project and categorizes file additions, modifications, and deletions. The results are returned as a simple dataclass:
