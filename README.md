@@ -1,10 +1,9 @@
+# 🧠 PatchMind
+
 [![Run PatchMind Report](https://github.com/Darkstar420/patchmind/actions/workflows/patchmind.yml/badge.svg?branch=main)](https://github.com/Darkstar420/patchmind/actions/workflows/patchmind.yml)
+[![PyPI Publish](https://github.com/Darkstar420/patchmind/actions/workflows/publish.yml/badge.svg?branch=main)](https://github.com/Darkstar420/patchmind/actions/workflows/publish.yml)
 [![PyPI](https://img.shields.io/pypi/v/patchmind)](https://pypi.org/project/patchmind/)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
-
-
-
-# 🧠 PatchMind
 
 **PatchMind** is a modular Python-based framework that monitors a local Git repository and generates intelligent HTML reports with change summaries, tree views, file timelines, risk scoring, and more. Designed for developers who want lightweight tools to keep their codebase clean and up to date — without another bloated assistant.
 
