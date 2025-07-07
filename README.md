@@ -1,5 +1,5 @@
-![Run PatchMind Report](https://github.com/Darkstar420/patchmind/actions/workflows/patchmind.yml/badge.svg)
-[![PyPI](https://img.shields.io/pypi/v/patchmind.svg)](https://pypi.org/project/patchmind/)
+![Run PatchMind Report](https://github.com/Darkstar420/patchmind/actions/workflows/patchmind.yml/badge.svg?branch=main)
+[![PyPI](https://img.shields.io/pypi/v/patchmind)](https://pypi.org/project/patchmind/)
 ![License](https://img.shields.io/github/license/Darkstar420/patchmind)
 
 
