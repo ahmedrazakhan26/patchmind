@@ -7,6 +7,7 @@ import argparse
 from core.patch_engine import PatchEngine
 from core.summarizer import PatchSummarizer
 from core.visualizer import PatchVisualizer
+from core.history import PatchHistory
 
 
 def main() -> None:
@@ -33,7 +34,25 @@ def main() -> None:
         action="store_true",
         help="Display repository changes in a tree view",
     )
+    parser.add_argument(
+        "--history",
+        metavar="FILE",
+        help="Display history timeline for the given file",
+    )
     args = parser.parse_args()
+
+    if args.history:
+        timeline = PatchHistory.file_timeline(args.history)
+        if not timeline:
+            print(f"No history found for {args.history}")
+            return
+
+        print(f"\u250c\u2500 File History: {args.history}")
+        print("\u2502")
+        for i, event in enumerate(timeline):
+            connector = "\u2514\u2500" if i == len(timeline) - 1 else "\u251c\u2500"
+            print(f"{connector} [{event['date']}] [{event['author']}] {event['summary']}")
+        return
 
     if args.changes or args.summary or args.analyze or args.tree:
         engine = PatchEngine()
