@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/patchmind.png" alt="PatchMind Banner" style="max-width:100%;">
+</p>
+
 # 🧠 PatchMind
 
 [![Run PatchMind Report](https://github.com/Darkstar420/patchmind/actions/workflows/patchmind.yml/badge.svg?branch=main)](https://github.com/Darkstar420/patchmind/actions/workflows/patchmind.yml)
